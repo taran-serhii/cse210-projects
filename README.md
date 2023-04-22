@@ -1,4 +1,4 @@
-# cse210-Serhei_Taran
+# cse210-SerheiTaran
 
 This repository contains the starter code for many different projects. They are arranged as follows:
 
