@@ -64,8 +64,29 @@ public class Journal
         Entry entry = new Entry(dateAndTime, prompt, _userInput); // creating new Entry object using the above variables
         _allEntries.Add(entry); // adding the created entry object to _allEntries list
       }
-      
+
       Console.WriteLine("Journal loaded sucesfully."); // informative message
+    }
+
+    // A method to edit an existing entry in the Journal
+    public void EditEntry(int index)
+    {
+        if (index < 0 || index >= _allEntries.Count) // checking if index is inside the number of entries in _allEntries list.
+        {
+            Console.WriteLine("Invalid entry index.");
+            return;
+        }
+
+        Console.WriteLine("Enter new prompt:"); // prompting the user to enter new prompt
+        string newPrompt = Console.ReadLine(); // reading user input
+
+        Console.WriteLine("Enter new response:");  // prompting the user to enter new response
+        string newResponse = Console.ReadLine(); // reading user input
+
+        _allEntries[index]._prompt = newPrompt; // updating specified prompt with user input
+        _allEntries[index]._userInput = newResponse; // updating specified response with user input
+
+        Console.WriteLine("Entry successfully edited.");
     }
 }
 
