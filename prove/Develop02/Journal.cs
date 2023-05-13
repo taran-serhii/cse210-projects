@@ -43,6 +43,7 @@ public class Journal
                 writer.WriteLine($"{entry._dateAndTime}~~{entry._prompt}~~{entry._userInput}"); // recodring each entry as a string with ~~ separators between 3 key pieces of info.
             }
         }
+
         Console.WriteLine ($"Journal was saved to {fileName}"); // informative message that the file with a specified fileName was saved.
     }
 
@@ -63,6 +64,7 @@ public class Journal
         Entry entry = new Entry(dateAndTime, prompt, _userInput); // creating new Entry object using the above variables
         _allEntries.Add(entry); // adding the created entry object to _allEntries list
       }
+      
       Console.WriteLine("Journal loaded sucesfully."); // informative message
     }
 }

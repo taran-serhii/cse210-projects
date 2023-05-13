@@ -15,6 +15,6 @@ public class Entry
 
     public override string ToString()
     {
-    return $"{_dateAndTime}: {_prompt}\n{_userInput}\n"; // returns a string representation of the entry object. 
+        return $"{_dateAndTime}: {_prompt}\n{_userInput}\n"; // returns a string representation of the entry object. 
     }
 }

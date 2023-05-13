@@ -28,7 +28,8 @@ public class PromptGenerator
         Random random = new Random(); 
         // Generating a random integer from 0 to prompt count minus 1 in order to cover the full range of prompts from the list, 
         // and assigning this random integer to a variable called index.
-        int index = random.Next(_promptList.Count);  
+        int index = random.Next(_promptList.Count);
+          
         return _promptList[index]; // Returning a prompt from the prompt list, which corresponds to a randomly selected index.
     }
 }
