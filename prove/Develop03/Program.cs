@@ -20,6 +20,10 @@ class Program
         scriptures.Add(new Scripture(new Reference("Doctrine and Covenants", 1, 37, 38), "Search these commandments, for they are true and faithful, and the prophecies and promises which are in them shall all be fulfilled.\nWhat I the Lord have spoken, I have spoken, and I excuse not myself; and though the heavens and the earth pass away, my word shall not pass away, but shall all be fulfilled, whether by mine own voice or by the voice of my servants, it is the same."));
         scriptures.Add(new Scripture(new Reference("Moses", 1, 39), "For behold, this is my work and my glory—to bring to pass the immortality and eternal life of man."));
 
+        // I added the menu to the program that allows the user to get a random scripture or to select a scripture from the list.
+        // If user is memorising the scripture, he needs to be able to return to the same specific scripture and continue to practice,
+        // instead of hoping that the needed scripture will appaer randomly again. Thus, typinh quit now returns the user to the main menu,
+        // instead of ending the whole program. And the whole program ends when user select option 3 in the main menu.
         while (true)
         {
             Console.WriteLine("Choose an option:");
@@ -27,7 +31,7 @@ class Program
             Console.WriteLine("2. Select a scripture from the list");
             Console.WriteLine("3. Exit");
 
-            if (!int.TryParse(Console.ReadLine(), out int choice))
+            if (!int.TryParse(Console.ReadLine(), out int choice)) // Prompt the user for input and try to parse it as an integer. If the input is not a valid integer, display an error message and continue to the next iteration of the loop.
             {
                 Console.WriteLine("Invalid input. Please try again.");
                 continue;
@@ -42,10 +46,10 @@ class Program
                     Console.WriteLine("Select a scripture from the list:");
                     for (int i = 0; i < scriptures.Count; i++)
                     {
-                        Console.WriteLine($"{i + 1}. {scriptures[i].GetReference().DisplayReference()}");
+                        Console.WriteLine($"{i + 1}. {scriptures[i].GetReference().DisplayReference()}"); // show the selection of scripture references based on scriptures list
                     }
 
-                    if (!int.TryParse(Console.ReadLine(), out int selection) || selection < 1 || selection > scriptures.Count)
+                    if (!int.TryParse(Console.ReadLine(), out int selection) || selection < 1 || selection > scriptures.Count) // take use inout and try to parse is as an integer. Check if the int is inside the range os scriptures available for selection.
                     {
                         Console.WriteLine("Invalid selection. Please try again.");
                         continue;
